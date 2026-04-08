@@ -11,7 +11,8 @@ SEARCH_TYPES = {
     }
 
 def index(request):
-    search = request.GET.get('search', '')
+    search = request.GET.get('search', '').strip()
+    print('search: ', search)
 
     # query = SearchQuery(search, search_type='websearch')
     query = SearchQuery(search)
@@ -43,7 +44,7 @@ def index(request):
         products = products.filter(price__gte=min_price, price__lte=max_price).order_by('price')
 
     categories = Product.objects.values_list('category', flat=True).distinct().order_by('category')
-    
+    print('search: ', search)
     return render(request, 'index.html', {
         'products': products, 
         'search': search, 

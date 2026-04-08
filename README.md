@@ -2,6 +2,8 @@
 
 A Django application demonstrating advanced fulltext search capabilities using PostgreSQL. This project implements multiple search strategies including full-text search, trigram similarity matching, and weighted ranking to provide accurate and relevant product search results.
 
+![alt text](image.png)
+
 ## Features
 
 - **Full-Text Search**: Leverages PostgreSQL's native full-text search functionality
@@ -178,20 +180,3 @@ python manage.py populate_products
 
 ### Database connection errors
 Verify PostgreSQL is running and your connection settings in `settings.py` are correct.
-
-## Future Enhancements
-
-- [ ] Advanced filters (price range, rating, category)
-- [ ] Search history and analytics
-- [ ] Performance metrics and query optimization
-- [ ] Pagination for large result sets
-- [ ] API endpoint for programmatic search access
-- [ ] Elasticsearch integration for large-scale deployments
-
-## License
-
-This project is open source. See the LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit pull requests for any improvements.
