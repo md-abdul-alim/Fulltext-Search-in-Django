@@ -2,9 +2,17 @@ from django.shortcuts import render
 from .models import Product
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
+SEARCH_TYPES = {
+        "plain": "plainto_tsquery",
+        "phrase": "phraseto_tsquery",
+        "raw": "to_tsquery",
+        "websearch": "websearch_to_tsquery",
+    }
+
 def index(request):
     search = request.GET.get('search', '')
 
+    # query = SearchQuery(search, search_type='websearch')
     query = SearchQuery(search)
     # vector = SearchVector('title', 'description', 'category', 'sku')
     vector = (
